@@ -1,16 +1,62 @@
 ## Test on Playground
 - use this endpoint for testing http://localhost:8000/graphiql
-- for creation
+- creation
 `
 mutation {
-        createContact(input: {name: "John Doe", email: "john@example.com", phone: "123-456-7890"}) {
-            id
-            name
-            email
-            phone
-        }
+    createContact(input: {name: "John Doe", email: "john@example.com", phone: "123-456-7890"}) {
+        id
+        name
+        email
+        phone
     }
+}
 `
+- view
+`
+query {
+  contact(id: 1) {
+    id
+    name
+    email
+    phone
+  }
+}
+`
+- lists
+`
+query {
+    contacts {
+        id
+        name
+        email
+        phone
+    }
+}
+`
+- update
+`
+mutation {
+    updateContact(id: 1, input: {name: "Jane Doe"}) {
+        id
+        name
+        email
+        phone
+    }
+}
+`
+
+- delete
+`
+mutation {
+    deleteContact(id: 1) {
+        id
+        name
+        email
+        phone
+    }
+}
+`
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
