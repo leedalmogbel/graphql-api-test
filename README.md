@@ -1,7 +1,7 @@
 ## Test on Playground
 - use this endpoint for testing http://localhost:8000/graphiql
 - creation
-`
+```
 mutation {
     createContact(input: {name: "John Doe", email: "john@example.com", phone: "123-456-7890"}) {
         id
@@ -10,9 +10,9 @@ mutation {
         phone
     }
 }
-`
+```
 - view
-`
+```
 query {
   contact(id: 1) {
     id
@@ -21,9 +21,9 @@ query {
     phone
   }
 }
-`
+```
 - lists
-`
+```
 query {
     contacts {
         id
@@ -32,9 +32,9 @@ query {
         phone
     }
 }
-`
+```
 - update
-`
+```
 mutation {
     updateContact(id: 1, input: {name: "Jane Doe"}) {
         id
@@ -43,10 +43,10 @@ mutation {
         phone
     }
 }
-`
+```
 
 - delete
-`
+```
 mutation {
     deleteContact(id: 1) {
         id
@@ -55,7 +55,7 @@ mutation {
         phone
     }
 }
-`
+```
 
 
 
