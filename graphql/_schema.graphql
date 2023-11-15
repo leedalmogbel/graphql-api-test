@@ -1,0 +1,23 @@
+type Query {
+    contact(id: ID!): Contact @field(resolver: "App\\GraphQL\\Queries\\ViewContactQuery@resolve")
+    contacts: [Contact!] @field(resolver: "App\\GraphQL\\Queries\\ListContactsQuery@resolve")
+}
+
+type Mutation {
+    createContact(input: ContactInput!): Contact @field(resolver: "App\\GraphQL\\Mutations\\CreateContactMutation@resolve")
+    updateContact(id: ID!, input: ContactInput!): Contact @field(resolver: "App\\GraphQL\\Mutations\\UpdateContactMutation@resolve")
+    deleteContact(id: ID!): Contact @field(resolver: "App\\GraphQL\\Mutations\\DeleteContactMutation@resolve")
+}
+
+type Contact {
+    id: ID!
+    name: String!
+    email: String!
+    phone: String
+}
+
+input ContactInput {
+    name: String!
+    email: String!
+    phone: String
+}
